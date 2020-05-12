@@ -1,5 +1,7 @@
 import * as React from "react";
 import Modal from "react-bootstrap/Modal";
+import * as Share from 'react-share'
+import './imageView.css'
 
 export default class ImageView extends React.Component {
 
@@ -43,9 +45,31 @@ export default class ImageView extends React.Component {
                   </button>
                 </div>
                 <div className="col-4">
-                  <button type="button" className="btn btn-block btn-success">
-                    Share
-                  </button>
+                    <div className="network">
+                      <Share.FacebookMessengerShareButton url={this.props.picture.full_picture} className="network-share-button">
+                        <Share.FacebookMessengerIcon size={32} round />
+                      </Share.FacebookMessengerShareButton>
+                    </div>
+                    <div className="network">
+                      <Share.LinkedinShareButton url={this.props.picture.full_picture}  className="network-share-button">
+                        <Share.LinkedinIcon size={32} round />
+                      </Share.LinkedinShareButton>
+                    <div className="network">
+                    </div>
+                      <Share.TwitterShareButton url={this.props.picture.full_picture}  className="network-share-button">
+                        <Share.TwitterIcon size={32} round />
+                      </Share.TwitterShareButton>
+                    </div>
+                    <div className="network">
+                      <Share.TelegramShareButton url={this.props.picture.full_picture}  className="network-share-button">
+                        <Share.TelegramIcon size={32} round />
+                      </Share.TelegramShareButton>
+                    </div>
+                    <div className="network">
+                      <Share.EmailShareButton url={this.props.picture.full_picture} subject={'Picture from agile'} body="body"  className="network-share-button">
+                        <Share.EmailIcon size={32} round />
+                      </Share.EmailShareButton>
+                    </div>
                 </div>
                 <div className="col-4">
                   <button type="button" className="btn btn-block btn-dark" onClick={this.nextPicture}>
@@ -55,7 +79,7 @@ export default class ImageView extends React.Component {
               </div>
               <div className="row">
                 <div className="col-12">
-                  <img src={this.props.picture.full_picture} className="img-fluid rounded justify-content-center" />
+                  <img src={this.props.picture.full_picture} className="img-fluid rounded" />
                 </div>
               </div>
             </div>

@@ -1,0 +1,14 @@
+.network {
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+  }
+  
+  .network-share-button {
+    cursor: pointer;
+  }
+  
+  .network-share-button:hover:not(:active) {
+    opacity: 0.75;
+  }
